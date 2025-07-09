@@ -1,6 +1,6 @@
+import { ArrowRight, Code, MessageSquare, Phone, Sparkles, Zap } from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MessageSquare, Code, Phone, Zap, ArrowRight, Sparkles } from 'lucide-react';
 
 interface HomePageProps {
     darkMode: boolean;
@@ -78,8 +78,8 @@ const HomePage: React.FC<HomePageProps> = ({ darkMode }) => {
                             <button
                                 onClick={() => navigate('/api-reference')}
                                 className={`px-8 py-4 rounded-lg font-semibold border-2 transition-all duration-200 ${darkMode
-                                        ? 'border-slate-600 text-slate-300 hover:border-slate-500 hover:bg-slate-800'
-                                        : 'border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50'
+                                    ? 'border-slate-600 text-slate-300 hover:border-slate-500 hover:bg-slate-800'
+                                    : 'border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50'
                                     }`}
                             >
                                 View API Reference
@@ -106,8 +106,8 @@ const HomePage: React.FC<HomePageProps> = ({ darkMode }) => {
                             key={service.id}
                             onClick={() => navigate(service.path)}
                             className={`group relative overflow-hidden rounded-2xl border cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-105 ${darkMode
-                                    ? 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
-                                    : 'border-slate-200 bg-white hover:border-slate-300'
+                                ? 'border-slate-700 bg-slate-800/50 hover:border-slate-600'
+                                : 'border-slate-200 bg-white hover:border-slate-300'
                                 }`}
                         >
                             <div className="p-8">
@@ -163,8 +163,8 @@ const HomePage: React.FC<HomePageProps> = ({ darkMode }) => {
                         <button
                             onClick={() => navigate('/documentation/introduction')}
                             className={`px-8 py-3 rounded-lg font-semibold transition-all duration-200 ${darkMode
-                                    ? 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-                                    : 'bg-white text-slate-700 hover:bg-slate-100'
+                                ? 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                                : 'bg-white text-slate-700 hover:bg-slate-100'
                                 }`}
                         >
                             View Documentation

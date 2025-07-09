@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import SearchModal from "../components/SearchModal";
 import ApiLayout from "../components/layout/ApiLayout";
 import HomePage from "../components/pages/HomePage";
+import { Introduction } from "../components/pages/getting-started/Introduction";
 import SendSmsPage from "../components/pages/sms/SendSmsPage";
 
 
@@ -33,6 +34,7 @@ const Index = () => {
             <Routes>
                 <Route path="/" element={<HomePage darkMode={darkMode} />} />
                 <Route path="/documentation/*" element={<ApiLayout darkMode={darkMode} />}>
+                    <Route path="introduction" element={<Introduction darkMode={darkMode} />} />
                     <Route path="sms/send" element={<SendSmsPage darkMode={darkMode} />} />
                 </Route>
             </Routes>

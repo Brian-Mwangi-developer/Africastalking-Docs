@@ -1,6 +1,6 @@
+import { ChevronDown, ChevronRight, Code, MessageSquare, Phone, Sparkles, Zap } from 'lucide-react';
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronRight, ChevronDown, MessageSquare, Code, Phone, Zap } from 'lucide-react';
 
 interface ApiSidebarProps {
     darkMode: boolean;
@@ -20,6 +20,16 @@ const ApiSidebar: React.FC<ApiSidebarProps> = ({ darkMode }) => {
     };
 
     const menuItems = [
+        {
+            id: 'getting-started',
+            title: 'Getting Started',
+            icon: <Sparkles className="w-4 h-4" />,
+            children: [
+                { id: 'introduction', title: 'Introduction', path: '/documentation/introduction' },
+                { id: 'authentication', title: 'Authentication', path: '/documentation/authentication' },
+                { id: 'request-headers', title: 'Request Headers', path: '/documentation/request_headers' }
+            ]
+        },
         {
             id: 'sms',
             title: 'SMS API',
@@ -74,8 +84,8 @@ const ApiSidebar: React.FC<ApiSidebarProps> = ({ darkMode }) => {
                             <button
                                 onClick={() => toggleSection(item.id)}
                                 className={`w-full flex items-center justify-between p-2 rounded-lg transition-colors duration-200 ${darkMode
-                                        ? 'text-slate-300 hover:text-white hover:bg-slate-800'
-                                        : 'text-slate-600 hover:text-slate-900 hover:bg-white'
+                                    ? 'text-slate-300 hover:text-white hover:bg-slate-800'
+                                    : 'text-slate-600 hover:text-slate-900 hover:bg-white'
                                     }`}
                             >
                                 <div className="flex items-center space-x-2">
@@ -95,11 +105,11 @@ const ApiSidebar: React.FC<ApiSidebarProps> = ({ darkMode }) => {
                                             key={child.id}
                                             onClick={() => navigate(child.path)}
                                             className={`w-full text-left p-2 text-sm rounded-lg transition-colors duration-200 ${location.pathname === child.path
-                                                    ? `${darkMode ? 'bg-orange-900/50 text-orange-300' : 'bg-orange-100 text-orange-700'}`
-                                                    : `${darkMode
-                                                        ? 'text-slate-400 hover:text-slate-300 hover:bg-slate-800'
-                                                        : 'text-slate-500 hover:text-slate-700 hover:bg-white'
-                                                    }`
+                                                ? `${darkMode ? 'bg-orange-900/50 text-orange-300' : 'bg-orange-100 text-orange-700'}`
+                                                : `${darkMode
+                                                    ? 'text-slate-400 hover:text-slate-300 hover:bg-slate-800'
+                                                    : 'text-slate-500 hover:text-slate-700 hover:bg-white'
+                                                }`
                                                 }`}
                                         >
                                             {child.title}

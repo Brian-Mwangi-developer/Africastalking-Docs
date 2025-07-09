@@ -28,7 +28,7 @@ export default function SearchModal({ isOpen, onClose, darkMode }: SearchModalPr
             title: "Send SMS",
             description: "Learn how to send SMS messages using our API",
             category: "Documentation",
-            url: "/docs/sms/send",
+            url: "/documentation/sms/send",
             icon: FileText,
         },
         {
@@ -44,7 +44,7 @@ export default function SearchModal({ isOpen, onClose, darkMode }: SearchModalPr
             title: "USSD Sessions",
             description: "Create interactive USSD applications",
             category: "Documentation",
-            url: "/docs/ussd/sessions",
+            url: "/documentation/ussd/sessions",
             icon: FileText,
         },
         {
@@ -60,7 +60,7 @@ export default function SearchModal({ isOpen, onClose, darkMode }: SearchModalPr
             title: "Authentication",
             description: "How to authenticate with our APIs",
             category: "Documentation",
-            url: "/docs/auth",
+            url: "/documentation/auth",
             icon: FileText,
         },
         {
@@ -222,7 +222,7 @@ export default function SearchModal({ isOpen, onClose, darkMode }: SearchModalPr
                                         }`}>esc</kbd> to close
                                 </span>
                             </div>
-                            <span>Search powered by  Africastalking</span>
+                            <span>Search powered by  Africastalking AI</span>
                         </div>
                     </div>
                 </div>

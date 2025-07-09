@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeBlock from '../../codeBlock';
+import CodeBlock from '../../CodeBlock';
 
 interface SendSmsPageProps {
     darkMode: boolean;
@@ -84,6 +84,7 @@ print_r($result);
                 </p>
             </div>
 
+
             <div className={`p-6 rounded-lg border ${darkMode ? 'border-orange-700/50 bg-orange-900/20' : 'border-orange-200 bg-orange-50'}`}>
                 <h3 className={`text-lg font-semibold mb-2 ${darkMode ? 'text-orange-300' : 'text-orange-800'}`}>
                     💡 Quick Tip
@@ -162,7 +163,9 @@ print_r($result);
                             </tr>
                         </tbody>
                     </table>
+
                 </div>
+
             </div>
         </div>
     );
