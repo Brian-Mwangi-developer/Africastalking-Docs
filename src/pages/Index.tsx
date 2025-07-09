@@ -1,17 +1,17 @@
 import { useState } from "react";
+import { Route, Routes } from 'react-router-dom';
 import Header from "../components/Header";
-import MainContent from "../components/MainContent";
 import Navigation from "../components/Navigation";
-import { RightSideBar } from "../components/RightSidebar";
 import SearchModal from "../components/SearchModal";
-import Sidebar from "../components/Sidebar";
+import ApiLayout from "../components/layout/ApiLayout";
+import HomePage from "../components/pages/HomePage";
+import SendSmsPage from "../components/pages/sms/SendSmsPage";
 
 
-const HomePage = () => {
+const Index = () => {
     const [darkMode, setDarkMode] = useState(true);
     const [isSearchOpen, setIsSearchOpen] = useState(false)
     const [activeTab, setActiveTab] = useState('documentation');
-    const [activeSection, setActiveSection] = useState('introduction');
 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
@@ -30,23 +30,34 @@ const HomePage = () => {
                 setActiveTab={setActiveTab}
                 darkMode={darkMode}
             />
-            <div className="flex h-[calc(100vh-8rem)]">
-                <Sidebar
-                    darkMode={darkMode}
-                    activeSection={activeSection}
-                    setActiveSection={setActiveSection}
-                />
-                <MainContent
-                    darkMode={darkMode}
-                    activeTab={activeTab}
-                    activeSection={activeSection}
-                />
-                <RightSideBar />
-            </div>
+            <Routes>
+                <Route path="/" element={<HomePage darkMode={darkMode} />} />
+                <Route path="/documentation/*" element={<ApiLayout darkMode={darkMode} />}>
+                    <Route path="sms/send" element={<SendSmsPage darkMode={darkMode} />} />
+                </Route>
+            </Routes>
+
 
             <SearchModal darkMode={darkMode} isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
         </div>
     );
 }
-export default HomePage;
+export default Index;
+
+
+
+
+// <div className="flex h-[calc(100vh-8rem)]">
+//     <Sidebar
+//         darkMode={darkMode}
+//         activeSection={activeSection}
+//         setActiveSection={setActiveSection}
+//     />
+//     <MainContent
+//         darkMode={darkMode}
+//         activeTab={activeTab}
+//         activeSection={activeSection}
+//     />
+//     <RightSideBar />
+// </div>
